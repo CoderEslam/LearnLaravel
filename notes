@@ -6,3 +6,6 @@ Route::middleware('web')
                 ->group(base_path('routes/adminWeb.php'));
 
 
+/* Folder == namespace  => group of route*/
+
+
