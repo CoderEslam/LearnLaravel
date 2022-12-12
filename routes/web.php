@@ -1,6 +1,6 @@
 <?php
 
-use Faker\Core\Number;
+use App\Http\Controllers\Front\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,46 +18,14 @@ Route::get('/learn', function () {
     return 'Hello';
 });
 
-/* normal Route with required parameter */
-Route::get('/learn/{id}', function ($id) {
-
-    $isInt = is_numeric($id);
-
-    if ($isInt) {
-
-        return 'Hello' . $id;
-
-    } else {
-        return 'non number';
-    }
-})->name('learn');
-/* normal Route with required parameter */
-Route::get('/learn/non/{id?}', function ($id) {
-
-    $isInt = is_numeric($id);
-
-    if ($isInt) {
-
-        return 'non required' . $id;
-
-    } else {
-        return 'non number';
-    }
-})->name('learnnon');
-/* normal Route with required parameter */
-Route::get('/learn/name/{name}', function ($name) {
-
-    $is_string = is_string($name);
-
-    if ($is_string) {
-
-        return 'Hello ' . $name;
-
-    } else {
-        return 'nothing';
-    }
-});
-
 Route::get('/welcome', function () {
     return view('welcome');
 });
+
+/* Folder == namespace  => group of route*/
+Route::namespace('/Front')->group(function () {
+    // all route only access controller oy method in folder name Front
+    Route::get('user', [User::class, 'show']);
+});
+
+
