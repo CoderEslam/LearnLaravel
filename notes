@@ -1,0 +1,8 @@
+when you make now route file .php
+RouteServiceProvider and link your new route file
+
+Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/adminWeb.php'));
+
+
