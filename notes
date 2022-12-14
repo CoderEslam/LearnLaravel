@@ -9,3 +9,10 @@ Route::middleware('web')
 /* Folder == namespace  => group of route*/
 
 
+in Route::group() =? best case fro make auth and prefix
+
+to make controller we write -> php artisan make:controller {Name of Controller}
+
+to make controller with all function we write -> php artisan make:controller PenController --resource
+
+

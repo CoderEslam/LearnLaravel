@@ -11,4 +11,9 @@ class User extends Controller
     {
         return 'Eslam Ghazy';
     }
+
+    public function myJob(): string
+    {
+        return 'Android Developer';
+    }
 }
